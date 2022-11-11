@@ -3,7 +3,7 @@ const jsonwebtoken = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 
-const auth = require("../../utils/auth");
+const verifyJWT = require("../../utils/verifyJWT");
 const User = require("../../models/user");
 
 const router = express.Router();
@@ -12,13 +12,13 @@ const router = express.Router();
 //------GET : "api/auth" : Public---------
 //----------------------------------------
 
-router.get("/", auth, async (req, res) => {
+router.get("/", verifyJWT, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
     if (!user) {
       res.status(404).json({ message: "User Not Found" });
     }
-    res.json(user);
+    res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ message: "Server Error" });
   }

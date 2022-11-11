@@ -1,6 +1,6 @@
 const jsonwebtoken = require("jsonwebtoken");
 
-const auth = (req, res, next) => {
+const verifyJWT = (req, res, next) => {
   const token = req.header("x-auth-token");
   if (!token) {
     return res.status(401).json({
@@ -19,4 +19,4 @@ const auth = (req, res, next) => {
   }
 };
 
-module.exports = auth;
+module.exports = verifyJWT;

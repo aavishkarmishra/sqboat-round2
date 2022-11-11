@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const authRoutes = require("./api/auth");
 const userRoutes = require("./api/users");
+const productRoutes = require("./api/products");
 const router = express.Router();
 
 router.get("/api", (req, res) => {
@@ -9,7 +10,8 @@ router.get("/api", (req, res) => {
 });
 
 router.use("/api/auth", authRoutes);
-router.use('/api/users',userRoutes)
+router.use("/api/users", userRoutes);
+router.use("/api/products",productRoutes);
 
 if (process.env.NODE_ENV === "production") {
   router.use(express.static("../client/build"));
