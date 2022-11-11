@@ -1,10 +1,13 @@
 const express = require("express");
 const path = require("path");
+const authRoutes = require("./api/auth");
 const router = express.Router();
 
 router.get("/api", (req, res) => {
   res.send("Welcome to our server!!");
 });
+
+router.use("/api/auth", authRoutes);
 
 if (process.env.NODE_ENV === "production") {
   router.use(express.static("../client/build"));
@@ -12,3 +15,5 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+module.exports = router;
