@@ -9,8 +9,9 @@ const auth = (req, res, next) => {
   }
 
   try {
-    const decodedToken = jsonwebtoken.verify(token, process.env.jsonwebtoken_SECRET);
+    const decodedToken = jsonwebtoken.verify(token, process.env.JWT_SECRET);
     req.user = decodedToken.user;
+    next(); //callback, important , o.w. we'll get stuck here only
   } catch (error) {
     res.status(401).json({
       message: "Authorization Denied",

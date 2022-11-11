@@ -38,19 +38,17 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({
-        message: errors.array(),
-      });
+      return res.status(400).json({ message: errors.array() });
     }
     try {
       const { email, password } = req.body;
       const user = await User.findOne({ email });
       if (!user) {
-        res.status(404).json({ message: "User Not Found" });
+        return res.status(404).json({ message: "User Not Found" });
       }
       const isMatched = await bcrypt.compare(password, user.password);
       if (!isMatched) {
-        res.status(401).json({ message: "Invalid Password" });
+        return res.status(401).json({ message: "Invalid Password" });
       }
       const payload = {
         user: {
@@ -62,14 +60,10 @@ router.post(
       jsonwebtoken.sign(
         payload,
         `${process.env.JWT_SECRET}`,
-        {
-          expiresIn: "10 days",
-        },
+        { expiresIn: "10 days" },
         (error, token) => {
           if (error) throw error;
-          res.json({
-            token,
-          });
+          res.json({ token });
         },
       );
     } catch (error) {
