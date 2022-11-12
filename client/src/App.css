@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -12,15 +13,42 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+nav{
+  margin-bottom: 2rem;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form{
+  background: #fff;
+  padding: 2rem;
+  width: 25rem;
+  text-align: center;
+}
+.signup{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+input{
+  margin-bottom: 1rem;
+}
+.confirmed{
+  text-align: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 35vh;
+}
+.App-header {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(50px + 2vmin);
   color: white;
 }
 

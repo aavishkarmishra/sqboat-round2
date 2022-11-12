@@ -6,9 +6,10 @@ const jsonwebtoken = require("jsonwebtoken");
 const User = require("../../models/user");
 const router = express.Router();
 
-//----------------------------------------
-//------POST : "api/user" : Public---------
-//----------------------------------------
+//-----------------------------------------
+//------Post : "api/user" : Public---------
+//- Register user and return jwt token-----
+//-----------------------------------------
 
 router.post(
   "/",
