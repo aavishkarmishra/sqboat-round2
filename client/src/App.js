@@ -29,12 +29,12 @@ function App() {
       }
     }
   }, []);
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     setUser(null);
     setOrder(null);
     setAuth(false);
-    localStorage.removeItem('token')
-  }
+    localStorage.removeItem("token");
+  };
   const Private = (children, navigate) => {
     if (authenticated) return children;
     return navigate;
@@ -47,17 +47,19 @@ function App() {
             Ecommmerce
           </a>
           <div className="navbarNav">
-            {
-              authenticated ? 
-              <a className="nav-link active" aria-current="page" onClick={handleLogout}>
-              Logout
-            </a>
-            :
-            <a className="nav-link active" aria-current="page" href="/login">
-              Login
-            </a>
-            }
-            
+            {authenticated ? (
+              <a
+                className="nav-link active"
+                aria-current="page"
+                onClick={handleLogout}
+              >
+                Logout
+              </a>
+            ) : (
+              <a className="nav-link active" aria-current="page" href="/login">
+                Login
+              </a>
+            )}
           </div>
         </div>
       </nav>
@@ -76,13 +78,13 @@ function App() {
         />
         <Route
           path="/confirm"
-          element={authenticated ? <Confirm /> : <NotFound />}
+          element={authenticated ? <Confirm orderId={orderId} /> : <NotFound />}
         />
         <Route
           path="/"
           element={
             authenticated ? (
-              <Home setOrder={setOrder} />
+              <Home user={user} setOrder={setOrder} />
             ) : (
               <Navigate to="/login" />
             )
