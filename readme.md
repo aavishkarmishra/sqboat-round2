@@ -60,6 +60,11 @@ In other terminal
   npm install
   npm run start
 ```
+For Docker 
+```sh
+docker build . -t ecommerce
+docker run -p 5000:5000 ecommerce
+```
 
 
 ## Author 👨‍💻
