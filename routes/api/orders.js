@@ -19,4 +19,14 @@ router.post("/:productId", verifyJWT, async (req, res) => {
   }
 });
 
+router.get("/:orderId", verifyJWT, async (req, res) => {
+  try {
+    const orderId = req.params.orderId;
+    const order = await Order.findById(orderId);
+    res.status(200).json(order);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
 module.exports = router;

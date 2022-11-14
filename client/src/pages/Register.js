@@ -1,17 +1,41 @@
-export default function Register() {
+import { useState } from "react";
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import {register} from '../actions/users'
+
+function Register({register}) {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleEmailChange = (event) => {
+    setEmail(event);
+  };
+  const handleUsernameChange = (event) => {
+    setUsername(event);
+  };
+  const handlePassChange = (event) => {
+    setPassword(event);
+  };
+  const onSubmit = (event) => {
+    event.preventDefault();
+    register(username,email, password);
+  };
   return (
     <div className="container signup">
       <div className="form row align-items-center rounded-3 border shadow-lg">
-        <form>
-          <h1 className="h3 mb-3 fw-normal">Register Now</h1>
+        <form onSubmit={(event) => onSubmit(event)}>
+          <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
           <div className="form-floating">
             <input
               type="text"
               className="form-control"
               id="floatingInput"
               placeholder="username"
+              value={username}
+              required
+              onChange={(event) => handleUsernameChange(event.target.value)}
             />
-            <label for="floatingInput">Username</label>
+            <label>Username</label>
           </div>
           <div className="form-floating">
             <input
@@ -19,8 +43,11 @@ export default function Register() {
               className="form-control"
               id="floatingInput"
               placeholder="name@example.com"
+              value={email}
+              required
+              onChange={(event) => handleEmailChange(event.target.value)}
             />
-            <label for="floatingInput">Email address</label>
+            <label>Email address</label>
           </div>
           <div className="form-floating">
             <input
@@ -28,18 +55,27 @@ export default function Register() {
               className="form-control"
               id="floatingPassword"
               placeholder="Password"
+              value={password}
+              required
+              onChange={(event) => handlePassChange(event.target.value)}
             />
-            <label for="floatingPassword">Password</label>
+            <label>Password</label>
           </div>
           <button className="w-100 btn btn-lg btn-primary" type="submit">
-            Sign Up
+            Sign in
           </button>
           <p className="mt-3 mb-0 text-muted">
-            If you already have an account then please{" "}
-            <a href="/login">Click Here</a>
+            If you don't have an account then please{" "}
+            <a href="/register">Register Here</a>
           </p>
         </form>
       </div>
     </div>
   );
 }
+
+Register.propTypes = {
+  register: PropTypes.func.isRequired
+};
+
+export default connect(null, { register })(Register);

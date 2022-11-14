@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {BrowserRouter} from 'react-router-dom'
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import "./index.css";
+import App from "./App";
+import store from "./store";
+import { loadUser } from "./actions/auth";
+import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+if (localStorage.token) {
+  const { token } = localStorage;
+  if (token) {
+    axios.defaults.headers.common["x-auth-token"] = token;
+    store.dispatch(loadUser());
+  } else {
+    delete axios.defaults.headers.common["x-auth-token"];
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
-    <App />
+      <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

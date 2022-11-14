@@ -1,0 +1,88 @@
+{
+  "users": [
+    { "username": "user1", "email": "user1@gmail.com", "password": "user123" }
+  ],
+  "products": [
+    {
+      "_id": "636ea220ced122665cc4dd97",
+      "title": "My Heart Locket",
+      "image": "https://m.media-amazon.com/images/I/41E8bkOM8IL._SL500_.jpg",
+      "details": "Forever In My Heart Locket Necklace That Hold Two Pictures, Personalized Heart Photo Locket Necklace/Customize Picture Locket Necklace Memorial Gift for Women Girls (Locket + Photo)",
+      "createdAt": "2022-11-11T19:27:28.593Z",
+      "updatedAt": "2022-11-11T19:27:28.593Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea27aced122665cc4dd9a",
+      "title": "Storyteller T-Shirt",
+      "image": "https://m.media-amazon.com/images/I/41JdtdiO+QL._SL500_.jpg",
+      "details": "Writer Facts Storyteller Nutrition Information T-Shirt",
+      "createdAt": "2022-11-11T19:28:58.289Z",
+      "updatedAt": "2022-11-11T19:28:58.289Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea2b3ced122665cc4dd9c",
+      "title": "Argumentative Writing Essay",
+      "image": "https://m.media-amazon.com/images/I/91gp98tKU+L._SL500_.png",
+      "details": "Argumentative Writing Essay - Distance Learning, Independent Student Instruction, In Class Lesson, Instructional Video, PPT, Worksheets, Rubric, Graphic Organizer, Google Slides – Television Violence",
+      "createdAt": "2022-11-11T19:29:55.379Z",
+      "updatedAt": "2022-11-11T19:29:55.379Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea2deced122665cc4dd9e",
+      "title": "Cute Formal Dress",
+      "image": "https://m.media-amazon.com/images/I/31VuBcN4fAL._SL500_.jpg",
+      "details": "Pervobs Elegant & Cute Formal Dress Women Wedding Bridesmaid High-Waist Ruffled Party Ball Prom Gown Cocktail Dress(XL, Blue)",
+      "createdAt": "2022-11-11T19:30:38.292Z",
+      "updatedAt": "2022-11-11T19:30:38.292Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea362ced122665cc4dda1",
+      "title": "WFEAGL Leather Bands",
+      "image": "https://m.media-amazon.com/images/I/41p83aM1XtL._SL500_.jpg",
+      "details": "WFEAGL Leather Bands Compatible with Apple Watch Band 38mm 40mm 41mm, Top Grain Leather Band Slim & Thin Replacement Wristband for iWatch SE & Series 8/7/6/5/4/3/2/1(Co-Red/Silver)",
+      "createdAt": "2022-11-11T19:32:50.724Z",
+      "updatedAt": "2022-11-11T19:32:50.724Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea480ced122665cc4dda3",
+      "title": "Attitude for Gratitude Affirmations",
+      "image": "https://m.media-amazon.com/images/I/51PsHRBvw5L._SL500_.jpg",
+      "details": "Attitude for Gratitude Affirmations: Happiness Boost with Soothing Nature Hypnosis & Meditation",
+      "createdAt": "2022-11-11T19:37:36.966Z",
+      "updatedAt": "2022-11-11T19:37:36.966Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea4ecced122665cc4dda6",
+      "title": "Kasa Smart Light",
+      "image": "https://m.media-amazon.com/images/I/41XlyY4EvQL._SL500_.jpg",
+      "details": "Kasa Smart Light Switch HS200, Single Pole, Needs Neutral Wire, 2.4GHz Wi-Fi Light Switch Works with Alexa and Google Home, UL Certified, No Hub Required , White ",
+      "createdAt": "2022-11-11T19:39:24.287Z",
+      "updatedAt": "2022-11-11T19:39:24.287Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea51cced122665cc4dda8",
+      "title": "Editor Hat Winter",
+      "image": "https://m.media-amazon.com/images/I/51PDrU5XapL._SL500_.jpg",
+      "details": "Editor Hat Winter Winter Knit Hood Hat Coif Scarf Knitted Warm Hats Kid Fleece Hats Blue ",
+      "createdAt": "2022-11-11T19:40:12.444Z",
+      "updatedAt": "2022-11-11T19:40:12.444Z",
+      "__v": 0
+    },
+    {
+      "_id": "636ea580ced122665cc4ddaa",
+      "title": "Editor Hat Winter",
+      "image": "https://m.media-amazon.com/images/I/51PDrU5XapL._SL500_.jpg",
+      "details": "Editor Hat Winter Winter Knit Hood Hat Coif Scarf Knitted Warm Hats Kid Fleece Hats Blue ",
+      "createdAt": "2022-11-11T19:41:52.935Z",
+      "updatedAt": "2022-11-11T19:41:52.935Z",
+      "__v": 0
+    }
+  ]
+}

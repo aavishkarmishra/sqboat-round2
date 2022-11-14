@@ -1,4 +1,22 @@
-export default function Confirm() {
+import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { getOrder } from "../actions/orders";
+import { parseURLParams } from "../utils/parseUrlParams";
+import NotFound from "./NotFound ";
+
+function Confirm({ order: { order,loading }, getOrder }) {
+  const { id } = parseURLParams(String(window.location));
+  useEffect(() => {
+    if(id)
+    getOrder(id);
+  }, [id,getOrder]);
+  if(loading){
+    return null;
+  }
+  if(!order){
+    return <NotFound/>
+  }
   return (
     <div className="container">
       <div
@@ -10,7 +28,7 @@ export default function Confirm() {
             Hooray !! Your order is confrimed.
           </h1>
           <p className="lead">
-            Order Id : XXXXXXXXXXXXXXX
+            Order Id : {order._id}
             <br />
             Note down the order id for tracking the progress.
           </p>
@@ -22,3 +40,14 @@ export default function Confirm() {
     </div>
   );
 }
+
+Confirm.prototype = {
+  order: PropTypes.object.isRequired,
+  getOrder: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  order: state.order,
+});
+
+export default connect(mapStateToProps, { getOrder })(Confirm);

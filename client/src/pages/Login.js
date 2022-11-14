@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { login } from "../actions/auth";
 
-export default function Login({ setAuth }) {
+function Login({login}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleEmailChange = (event) => {
@@ -12,7 +14,7 @@ export default function Login({ setAuth }) {
   };
   const onSubmit = (event) => {
     event.preventDefault();
-    login(email, password,setAuth);
+    login(email, password);
   };
   return (
     <div className="container signup">
@@ -55,3 +57,9 @@ export default function Login({ setAuth }) {
     </div>
   );
 }
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired
+};
+
+export default connect(null, { login })(Login);

@@ -1,5 +1,4 @@
 .App {
-  background-color: #282c34;
   min-height: 100vh;
 }
 
@@ -13,26 +12,26 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-nav{
+nav {
   margin-bottom: 2rem;
 }
 
-.form{
+.form {
   background: #fff;
   padding: 2rem;
   width: 25rem;
   text-align: center;
 }
-.signup{
+.signup {
   justify-content: center;
   display: flex;
   align-items: center;
   min-height: 80vh;
 }
-input{
+input {
   margin-bottom: 1rem;
 }
-.confirmed{
+.confirmed {
   text-align: center;
 
   display: flex;
@@ -43,13 +42,17 @@ input{
 }
 .App-header {
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(50px + 2vmin);
-  color: white;
+}
+.card-text, .card-title {
+  width: 15rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 .App-link {
