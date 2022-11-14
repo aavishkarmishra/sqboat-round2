@@ -1,7 +1,7 @@
 <hr/>
   <h1 align="center">Ecommerce</h1>
   <p align="center">
-    <a href="https://github.com/Manthan933/Manthan/wiki"><strong>Explore the Docs »</strong></a>
+    <a href="https://nameless-ocean-66804.herokuapp.com/"><strong>https://nameless-ocean-66804.herokuapp.com/</strong></a>
   </p>
 
 
