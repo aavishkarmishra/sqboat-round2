@@ -32,11 +32,11 @@ These are the prerequisites required to run this application:
 1. Clone the repository form GitHub
 
 ```sh
-  git clone https://github.com/Manthan933/Manthan.git
+  git clone https://github.com/aavishkarmishra/sqboat-round2
   cd Manthan
 ```
 
-2. Create .env file in Manthan using format from [.env.example](./.env.example)
+2. Create .env file using format
 
 ```sh
 PORT = 5000
