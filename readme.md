@@ -33,7 +33,7 @@ These are the prerequisites required to run this application:
 
 ```sh
   git clone https://github.com/aavishkarmishra/sqboat-round2
-  cd Manthan
+  cd sqboat-round2
 ```
 
 2. Create .env file using format
